@@ -1,0 +1,610 @@
+﻿<html>
+<head>
+<title>HOME</title>
+</head>
+<body>
+<h4 align="left">
+<a name="top"><img src = "images/javalogo.png" align="right" width="60px"/></a>
+<a href="home.html"><font  color="402828">HOME</font></a>&nbsp;&nbsp;
+<a href="course.html"><font  color="402828">COURSE</font></a>&nbsp;&nbsp;
+<a href="gallery.html"><font  color="402828">GALLERY</font></a>&nbsp;&nbsp;
+<a href="about.html"><font  color="402828">ABOUT</font></a>&nbsp;&nbsp;
+<a href="contact.html"><font  color="402828">CONTACT</font></a></h4>     
+</br>
+<h1 align="center"><font color="green" >Learn the basics</font></h1>
+<img src="images/img1.jpg" align="right"/>
+<ul >
+<a href="#r1"><li>Hello, World!</li></a>
+<a href="#r2"><li>Variables and Types</li></a>
+<a href="#r3"><li>Conditionals</li></a>
+<a href="#r4"><li>Arrays</li></a>
+<a href="#r5"><li>Loops</li></a>
+<a href="#r6"><li>Functions</li></a>
+<a href="#r7"><li>Objects</li></a>
+</ul>
+
+
+<font color="darkslategray">
+<a name="r1"> <h1>Hello, World!</h1></a>
+ <hr/>
+                
+<p>Java is an object oriented language (OOP). Java objects are part of so-called "Java classes".</p>
+<p>Let's go over the Hello world program, which simply prints "Hello, World!" to the screen.</p>
+
+<pre>
+
+<font color="steelblue">public class Main {
+    public static void main(String[] args) {
+        System.out.println("This will be printed");
+    }
+}
+</font>
+</pre>
+<p>The first line defines a class called Main.</p>
+<pre>
+
+<font color="steelblue">public class Main {
+</font>
+</pre>
+<p>In Java, every line of code that can actually run needs to be inside a class. This line declares a class named <code>Main</code>, which is <code>public</code>, that means that any other class can access it. This is not important for now, so don't worry. For now, we'll just write our code in a class called Main, and talk about objects later on.</p>
+<p>Notice that when we declare a public class, we must declare it inside a file with the same name (Main.java), otherwise we'll get an error when compiling.</p>
+<p>When running the examples on the site, we will not use the public keyword, since we write all our code in one file.</p>
+<p>The next line is:</p>
+
+<pre>
+<font color="steelblue">public static void main(String[] args) {
+</font>
+</pre>
+<p>This is the entry point of our Java program. the main method has to have this exact signature in order to be able to run our program.</p>
+<ul>
+<li><font color="steelblue">public</font> again means that anyone can access it.</li>
+<li><font color="steelblue">static</font> means that you can run this method without creating an instance of <code>Main</code>.</li>
+<li><font color="steelblue">void</font> means that this method doesn't return any value.</li>
+<li><font color="steelblue">main</font> is the name of the method.</li>
+</ul>
+<p>The arguments we get inside the method are the arguments that we will get when running the program with parameters. It's an array of strings. We will use it in our next lesson, so don't worry if you don't understand it all now.</p>
+
+<pre>
+<font color="steelblue">System.out.println("This will be printed");
+</font>
+</pre>
+<ul>
+<li><font color="steelblue">System</font> is a pre-defined class that Java provides us and it holds some useful methods and variables.</li>
+<li><font color="steelblue">out</font>is a static variable within System that represents the output of your program (stdout).</li>
+<li><font color="steelblue">println</font>is a method of out that can be used to print a line.</li>
+</ul>
+<a href="#top"><img src="top6.jpg" align="right" width="50px" hight="50px"></a>
+<a name="r2"><h1>Variables and Types</h1></a>
+                    <hr/>
+                
+                <p>Although Java is object oriented, not all types are objects. It is built on top of basic variable types called primitives.</p>
+<p>Here is a list of all primitives in Java:</p>
+<ul>
+<li><font color="steelblue">byte</font> (number, 1 byte)</li>
+<li><font color="steelblue">short</font> (number, 2 bytes)</li>
+<li><font color="steelblue">int</font> (number, 4 bytes)</li>
+<li><font color="steelblue">long</font>(number, 8 bytes)</li>
+<li><font color="steelblue">float</font>(float number, 4 bytes)</li>
+<li><font color="steelblue">double</font> (float number, 8 bytes)</li>
+<li><font color="steelblue">char</font> (a character, 2 bytes)</li>
+<li><font color="steelblue">boolean</font> (true or false, 1 byte)</li>
+</ul>
+<p>Java is a strong typed language, which means variables need to be defined before we use them.</p>
+<h3>Numbers</h3>
+<p>To declare and assign a number use the following syntax:</p>
+<pre>
+<font color="steelblue">int myNumber;
+myNumber = 5;</font>
+</pre>
+<p>Or you can combine them:</p>
+<pre>
+<font color="steelblue">int myNumber = 5;</font>
+</pre>
+<p>To define a double floating point number, use the following syntax:</p>
+<pre>
+<font color="steelblue">double d = 4.5;
+d = 3.0;</font>
+</pre>
+<p>If you want to use float, you will have to cast:</p>
+<pre>
+<font color="steelblue">float f = (float) 4.5;
+</font>
+</pre>
+<p>Or, You can use this:</p>
+<pre>
+<font color="steelblue">float f = 4.5f; // (f is a shorter way of casting float)
+</font>
+</pre>
+<h3>Characters and Strings</h3>
+<p>In Java, a character is it's own type and it's not simply a number, so it's not common to put an ascii value in it, there is a special syntax for chars:</p>
+<pre>
+<font color="steelblue">char c = 'g';</font>
+</pre>
+<p><font color="steelblue">String</font></code> is not a primitive. It's a real type, but Java has special treatment for String.</p>
+<p>Here are some ways to use a string:</p>
+<pre>
+<font color="steelblue">// Create a string with a constructor
+String s1 = new String("Who let the dogs out?");        // String object stored in heap memory
+// Just using "" creates a string, so no need to write it the previous way.
+String s2 = "Who who who who!";                         // String literal stored in String pool
+// Java defined the operator + on strings to concatenate:
+String s3 = s1 + s2;
+</font>
+</pre>
+<p>String is the only class where operator overloading is supported in java rest There is no operator overloading in Java!  We can concat two strings using + operator. The operator <code>+</code> is only defined for strings, you will never see it with other objects, only primitives.</p>
+<p>You can also concat string to primitives:</p>
+<pre>
+<font color="steelblue">int num = 5;
+String s = "I have " + num + " cookies"; //Be sure not to use "" with primitives.
+</font>
+</pre>
+<h3>boolean</h3>
+<p>Every comparison operator in java will return the type boolean. Unlike other languages, it only accepts two special values: <code>true</code> or <code>false</code>. </p>
+<pre>
+<font color="steelblue">boolean b = false;
+b = true;
+
+boolean toBe = false;
+b = toBe || !toBe;
+if (b) {
+    System.out.println(toBe);
+}
+
+int children = 0;
+b = children; // Will not work
+if (children) { // Will not work
+    // Will not work
+}
+
+int a;
+boolean b = true; 
+boolean c = false; 
+a = b + c;            //The following line will give an error
+System.out.println(a);
+</font>
+</pre>
+<a href="#top"><img src="top6.jpg" align="right" width="50px" hight="50px"></a>
+<a name="r3"><h1>Conditionals</h1></a>
+                    <hr/>
+<p>Java uses boolean variables to evaluate conditions. The boolean values <code>true</code> and <code>false</code> are returned when an expression is compared or evaluated.
+For example:</p>
+<pre>
+<font color="steelblue">int a = 4;
+boolean b = a == 4;
+
+if (b) {
+    System.out.println("It's true!");
+}
+</font>
+</pre>
+<p>Of course we don't normally assign a conditional expression to a boolean. Normally, we just use the short version:</p>
+<pre>
+<font color="steelblue">int a = 4;
+
+if (a == 4) {
+    System.out.println("Ohhh! So a is 4!");
+}
+</font>
+</pre>
+<h3>Boolean operators</h3>
+<p>There aren't that many operators to use in conditional statements and most of them are pretty straight forward:</p>
+<pre>
+<font color="steelblue">int a = 4;
+int b = 5;
+boolean result;
+result = a &lt; b; // true
+result = a &gt; b; // false
+result = a &lt;= 4; // a smaller or equal to 4 - true
+result = b &gt;= 6; // b bigger or equal to 6 - false
+result = a == b; // a equal to b - false
+result = a != b; // a is not equal to b - true
+result = a &gt; b || a &lt; b; // Logical or - true
+result = 3 &lt; a &amp;&amp; a &lt; 6; // Logical and - true
+result = !result; // Logical not - false
+</font></pre>
+<h3>if - else and between</h3>
+<p>The if, else statement in Java is pretty simple.</p>
+<pre><font color="steelblue">if (a == b) {
+    // a and b are equal, let's do something cool
+}
+</font>
+</pre>
+<p>And we can also add an else statement after an if, to do something if the condition is not true</p>
+<pre>
+<font color="steelblue">if (a == b) {
+    // We already know this part
+} else {
+    // a and b are not equal... :/
+}
+</font>
+</pre>
+<p>The if - else statements doesn't have to be in several lines with {}, if can be used in one line, or without the {}, for a single line statment.</p>
+<pre>
+<font color="steelblue">if (a == b)
+    System.out.println("Another line Wow!");
+else
+    System.out.println("Double rainbow!");
+</font>
+</pre>
+<p>Although this method might be useful for making your code shorter by using fewer lines, we strongly recommend for beginners not to use this short version of statements and to always use the full version with {}. This goes to every statement that can be shorted to a single line (for, while, etc).</p>
+<h3>The ugly side of if</h3>
+<p>There is a another way to write a one line if - else statement by using the operator ? :</p>
+<pre>
+<font color="steelblue">int a = 4;
+int result = a == 4 ? 1 : 8;
+
+// result will be 1
+// This is equivalent to
+int result;
+
+if (a == 4) {
+    result = 1;
+} else {
+    result = 8;
+}
+</font>
+</pre>
+<p>Again, we strongly recommend for beginners not to use this version of if.</p>
+<h3>== and equals</h3>
+<p>The operator <code><font color="steelblue">==</font></code> works a bit different on objects than on primitives.
+When we are using objects and want to check if they are equal, the operator <code>==</code> will say if they are the same, if you want to check if they are logically equal, you should use the <code>equals</code> method on the object. For example:</p>
+<pre>
+<font color="steelblue">String a = new String("Wow");
+String b = new String("Wow");
+String sameA = a;
+
+boolean r1 = a == b;      // This is false, since a and b are not the same object
+boolean r2 = a.equals(b); // This is true, since a and b are logically equals
+boolean r3 = a == sameA;  // This is true, since a and sameA are really the same object
+</font></pre>
+<a href="#top"><img src="top6.jpg" align="right" width="50px" hight="50px"></a>
+<a name="r4"> <h1>Arrays</h1></a>
+                    <hr/>
+                
+                <p>Arrays in Java are also objects. They need to be declared and then created.
+In order to declare a variable that will hold an array of integers, we use the following syntax:</p>
+<pre>
+<font color="steelblue">int[] arr;
+</font>
+</pre>
+<p>Notice there is no size, since we didn't create the array yet.</p>
+<pre>
+<font color="steelblue">arr = new int[10];
+</font>
+</pre>
+<p>This will create a new array with the size of 10. We can check the size by printing the array's length:</p>
+<pre>
+<font color="steelblue">System.out.println(arr.length);
+</font>
+</pre>
+<p>We can access the array and set values:</p>
+<pre>
+<font color="steelblue">arr[0] = 4;
+arr[1] = arr[0] + 5;
+</font>
+</pre>
+<p>Java arrays are 0 based, which means the first element in an array is accessed at index 0 (e.g: arr[0], which
+accesses the first element). Also, as an example, an array of size 5 will only go up to index 4 due to it being 0 based.</p>
+<pre>
+<font color="steelblue">int[] arr = new int[5];
+//accesses and sets the first element
+arr[0] = 4;
+</font>
+</pre>
+<p>We can also create an array with values in the same line:</p>
+<pre>
+<font color="steelblue">int[] arr = {1, 2, 3, 4, 5};
+</font>
+</pre>
+<p>Don't try to print the array without a loop, it will print something nasty like [I@f7e6a96</a> 
+To print out an array, use the following code:</p>
+<pre>
+<font color="steelblue">for (int i=0; i &lt; arr.length; i++) {
+    System.out.println(arr[i]);
+}
+</font>
+</pre>
+
+<a href="#top"><img src="top6.jpg" align="right" width="50px" hight="50px"></a>
+<a name="r5"><h1>Loops</h1></a>
+                    <hr/>
+                
+                <p>There are two kind of loops in Java, <code><font color="steelblue">for</font></code> and <code>while</code>.</p>
+<h3>For</h3>
+<p>The for loop has three sections:</p>
+<pre>
+<font color="steelblue">for (int i = 0; i &lt; 3; i++) {}
+</font>
+</pre>
+<p>First section runs once when we enter the loop.</p>
+<p>Second section is the gate keeper, if it returns <code>true</code>, we run the statements in the loop, if it returns <code>false</code>, we exit the loop. It runs right after the first section for the first time, then every time the loop is finished and the third section is run.</p>
+<p>The third section is the final statement that will run every time the loop runs.</p>
+<p>So in the case we have just seen, the loop will run 3 times. Here is the order of the commands:</p>
+<pre>
+<font color="steelblue">int i = 0;
+i &lt; 3 // 0 &lt; 3 = true
+      // Inside of loop
+i++ // i is now 1
+i &lt; 3 // 1 &lt; 3 = true
+      // Inside of loop
+i++ // i is now 2
+i &lt; 3 // 2 &lt; 3 = true
+      // Inside of loop
+i++ // i is now 3
+i &lt; 3 // 3 &lt; 3 = false
+      // Loop is done...
+</font>
+</pre>
+<p>We can omit the first and third section of the loop (although it will be weird), and the loop will still work:</p>
+<pre>
+<font color="steelblue">for (;i &lt; 5;) {}
+</font>
+</pre>
+<p>For cases where we want to use a loop that look like that, we use a <code>while</code> loop</p>
+<h3>While</h3>
+<p>The syntax is very similar to the previous for we looked at:</p>
+<pre>
+<font color="steelblue">while (condition) {}
+</font>
+</pre>
+<p>The condition will run for the first time when entering and every time the loop is done.
+If it returns false, the loop will not run.</p>
+<p>If we want the loop to always run at least one, we can use do-while</p>
+<pre>
+<font color="steelblue">do {
+
+} while(condition);
+</font>
+</pre>
+<p>Notice the <code><font color="steelblue">;</font></code> in the end of the do-while.</p>
+<h3>Foreach</h3>
+<p>Another version of for, is the foreach. The keyword we use is still <code>for</code>, but when we want to iterate on the elements inside an array we can simply use it:</p>
+<pre>
+<font color="steelblue">int[] arr = {2, 0, 1, 3};
+for (int el : arr) {
+    System.out.println(el);
+}
+</font>
+</pre>
+<p>This is a short version and equivalent to:</p>
+<pre>
+<font color="steelblue">int[] arr = {1, 9, 9, 5};
+for (int i = 0; i &lt; arr.length; i++) {
+    int el = arr[i];
+    System.out.println(el);
+}
+</font>
+</pre>
+<p>Notice that if you want to use the index of the element inside the loop, you have to use the longer version and can't use foreach.</p>
+<h3>break and continue</h3>
+<p>These two keywords help us control the loop from within it.
+<font color="steelblue">break
+</font> will cause the loop to stop and will go immediately to the next statement after the loop:</p>
+<pre>
+<font color="steelblue">int i;
+for (i = 0; i &lt; 5; i++) {
+    if (i &gt;= 2) {
+        break;
+    }
+    System.out.println("Yuhu");
+}</font>
+<font color="green">System.out.println(i);
+// Output:
+// Yuhu
+// Yuhu
+// 2
+</font>
+</pre>
+<p>
+<font color="steelblue">continue</font> will stop the current iteration and will move to the next one. Notice that inside a for loop, it will still run the third section.</p>
+<pre>
+<font color="steelblue">int i;
+for (i = 0; i &lt; 5; i++) {
+    if (i &gt;= 3) {
+        break;
+    }
+    System.out.println("Yuhu");
+    if (i &gt;= 1) {
+        continue;
+    }
+    System.out.println("Tata");
+}</font>
+<font color="green">
+System.out.println(i);
+// Output
+// Yuhu
+// Tata
+// Yuhu
+// Yuhu
+// 3
+</font>
+</pre>
+<a href="#top"><img src="top6.jpg" align="right" width="50px" hight="50px"></a>
+ <a name="r6"><h1>Functions</h1></a>
+                    <hr/>
+                
+                <p>In Java, all function definitions must be inside classes. We also call functions methods. Let's look at an example method</p>
+<pre>
+<font color="steelblue">public class Main {
+    public static void foo() {
+        // Do something here
+    }
+}
+</font></pre>
+<p>
+<font color="steelblue">foo</font> is a method we defined in class Main. Notice a few things about <code>foo</code>.</p>
+<ul>
+<li><font color="steelblue">static</font> means this method belongs to the class Main and not to a specific instance of Main. Which means we can call the method from a different class like that <code>Main.foo()</code>.</li>
+<li><font color="steelblue">void</font> means this method doesn't return a value. Methods can return a single value in Java and it has to be defined in the method declaration. However, you can use <code>return</code> by itself to exit the method.</li>
+<li>This method doesn't get any arguments, but of course Java methods can get arguments as we'll see further on.</li>
+</ul>
+<h3>Arguments</h3>
+<p>I always like to say that arguments to Java methods are passed by value, although some might disagree with my choice of words, I find it the best way to explain and understand how it works exactly.</p>
+<p>By value means that arguments are copied when the method runs. Let's look at an example.</p>
+<pre>
+<font color="steelblue">public void bar(int num1, int num2) {
+    ...
+}
+</font>
+</pre>
+<p>Here is a another place in the code, where bar is called</p>
+<pre>
+<font color="steelblue">int a = 3;
+int b = 5;
+bar(a, b);
+</font>
+</pre>
+<p>You can picture in your head that when <code>bar(a, b)</code> is run, it's like in the beginning of <code>bar</code> the following two lines are written:</p>
+<pre>
+<font color="steelblue">int num1 = a;
+int num2 = b;
+</font></pre>
+<p>And only then the rest of the method is run.</p>
+<p>This means that <code>a</code> value get copied to num1 and <code>b</code> value get copied to <code>num2</code>. Changing the values of <code>num1</code> and <code>num2</code> will not affect <code>a</code> and <code>b</code>.</p>
+<p>If the arguments were objects, the rules remain the same, but it acts a bit differently. Here is a an example:</p>
+<pre>
+<font color="steelblue">public void bar2(Student s1, Student s2) {
+    ...
+}
+</font></pre>
+<p>And here is how we use it</p>
+<pre>
+<font color="steelblue">Student joe = new Student("joe");
+Student jack = new Student("jack");
+bar2(joe, jack);
+</font>
+</pre>
+<p>Again we can picture the same two lines in the beginning of <code>bar2</code></p>
+<pre>
+<font color="steelblue">Student s1 = joe;
+Student s2 = jack;
+</font>
+</pre>
+<p>But when we assign objects, it's a bit different than assigning primitives. <code>s1</code> and <code>joe</code> are two different references to the same object. <code>s1 == joe</code> is true. This means that running methods on <code>s1</code> will change the object <code>joe</code>. But if we'll change the value of <code>s1</code> as a reference, it will not affect the reference <code>joe</code>.</p>
+<pre>
+<font color="steelblue">s1.setName("Chuck"); // joe name is now Chuck as well
+s1 = new Student("Norris"); // s1 is a new student, different than joe with the name of Norris
+// s1 == joe   is not true anymore
+</font></pre>
+<h3>Non static methods</h3>
+<p>Non static methods in Java are used more than static methods. Those methods can only be run on objects and not on the whole class.</p>
+<p>Non static methods can access and alter the field of the object.</p>
+<pre>
+<font color="steelblue">public class Student {
+    private String name;
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+</font>
+</pre>
+<p>Calling the methods will require an object of type <code>Student</code>.</p>
+<pre>
+<font color="steelblue">Student s = new Student();
+s.setName("Danielle");
+String name = s.getName();
+
+Student.setName("Bob"); // Will not work!
+Student.getName(); // Will not work!
+</font></pre>
+<h3>Summary</h3>
+<ul>
+<li>Every Java method has to be within a class</li>
+<li>Static methods belong to a class while non-static methods belong to objects</li>
+<li>All parameters to functions are passed by value, primitives content is copied, while objects are not copied and some would say 'passed by reference'</li>
+</ul>
+
+<a href="#top"><img src="top6.jpg" align="right" width="50px" hight="50px"></a>
+<a name="r7"><h1>Objects</h1></a>
+                    <hr/>
+                
+                <p>Everything in Java is within classes and objects. Java objects hold a state, state are variables which are saved together within an object, we call them fields or member variables.</p>
+<p>Let start with an example:</p>
+<pre>
+<font color="steelblue">class Point {
+    int x;
+    int y;
+}
+</font>
+</pre>
+<p>This class defined a point with x and y values.</p>
+<p>In order to create an instance of this class, we need to use the keyword <code>new</code>.</p>
+<pre>
+<font color="steelblue">Point p = new Point();
+</font>
+</pre>
+<p>In this case, we used a default constructor (constructor that doesn't get arguments) to create a Point. All classes that don't explicitly define a constructor has a default constructor that does nothing.</p>
+<p>We can define our own constructor:</p>
+<pre>
+<font color="steelblue">class Point {
+    int x;
+    int y;
+
+    Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+}
+</font>
+</pre>
+<p>This means we can not longer use the default constructor <code>new Point()</code>. We can now only use the defined constructor <code>new Point(4, 1)</code>.</p>
+<p>We can define more than one constructor, so <code>Point</code> can be created in several ways. Let's define the default constructor again.</p>
+<pre>
+<font color="steelblue">class Point {
+    int x;
+    int y;
+
+    Point() {
+        this(0, 0);
+    }
+
+    Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+}
+</font>
+</pre>
+<p>Notice the usage of the <code>this</code> keyword here. We can use it within a constructor to call a different constructor (in order to avoid code duplication). It can only be the first line within the constructor.</p>
+<p>We also used the <code>this</code> keyword as a reference of the current object we are running on.</p>
+<p>After we defined <code>p</code> we can access <code><font color="steelblue">x</font></code> and <code><font color="steelblue">y</font></code>.</p>
+<pre>
+<font color="steelblue">p.x = 3;
+p.y = 6;
+</font>
+</pre>
+<h3>Methods</h3>
+<p>We can now define methods on <code>Point</code>.</p>
+<pre>
+<font color="steelblue">class Point {
+    ... // Our code previously
+    void printPoint() {
+        System.out.println("(" + x + "," + y + ")");
+    }
+
+    Point center(Point other) {
+        // Returns the center between this point the other point
+        // Notice we are using integer, we wan't get an accurate value
+        return new Point((x + other.x) / 2, (y + other.y) / 2);
+    }
+}
+</font>
+</pre>
+
+
+
+<a href="#top"><img src="top6.jpg" align="right" width="50px" hight="50px"></a>
+<h3>Public and Private</h3>
+<p>When using the keyword private before a variable or a method, it means only the class itself can access the variable or method, when we're using public it means everybody can access it. We usually see constructors defined as public, variables defined as private and methods are separated, some public and some private.</p>
+</font>
+
+
+<hr>
+<footer align="center"><h4>|© Copyright 2020. All Rights Reserved.|</h4> </footer>
+<hr>
+
+
+</body>
